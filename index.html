@@ -13,38 +13,70 @@
 </head>
 
 <body>
-    <div id="container">
-
-    <div id="start">Start Quiz!</div>
-        <div id="quiz" style="display: none">
-
-            <div id="question"></div>
-            <div id="qImg"></div>
-            <div id="choices">
-
-                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-
+    <!-- Header -->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="header">
+                <h3 class="timerHeading">Timer:</h3>
+                <h3 class="timer"></h3>
             </div>
-
-            <div id="timer">
-
-                <div id="counter"></div>
-                <div id="btimeGauge"></div>
-                <div id="timeGauge"></div>
-
-            </div>
-
-            <div id="progress"></div>
-
         </div>
-
-        <div id="scoreContainer" style="display: none"></div>
-
+        <div class="col-sm-6">
+            <button onclick="viewHighScore" id="viewHS" class="btn btn-primary btn-lg">View Highscore</button>
+        </div>
     </div>
 
-    <script src="quiz.js"></script>
+    <!-- Quiz Content -->
+
+    <div class="jumbotron" id="quizRules">
+        <h1 class="title">Code Quiz</h1>
+        <p class="quizInfo">Welcome to Code Quiz! Be prepared to test your knowledge on various topics like HTML, CSS,
+            and JavaScript. Answer as many questions correctly in the time given. If you answer wrong, you will lose
+            time on the clock! Final score will be shown at the end of the quiz. Good luck!</p>
+        <hr>
+        <button id="startQuiz" class="btn btn-primary btn-lg">Start Quiz</button>
+    </div>
+
+    <div class="container">
+        <div id="quiz">
+            <div id="question">
+                <div id="choices">
+                    <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                    <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                    <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                    <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+                </div>
+            </div>
+            <div id="progress"></div>
+        </div>
+    </div>
+
+    <div class="container" id="scoreContainer" style="display: none">
+        <div id="completedMessage"></div>
+        <div id="finalScoreMessage"></div>
+        <div class="saveHS">
+            <label id="playerName"></label>
+            <input type="text" id="nameField" placeholder="Enter Name Here ">
+            <input type="button" id="submitButton" value="Submit High Score">
+        </div>
+    </div>
+
+    <div class="container" id="displayHS">
+        <div id="highScoreContainer" style="display: none">
+            <div id="highScoreHeader">
+                <h2>Code Quiz High Scores</h2>
+            </div>
+            <ul id="highScoreList"></ul>
+
+            <div class="lustify-content-center" id="highScoreButton">
+                <button onclick="startOver()" class="hsb" type="button" id="startOver" value="Start Over">Start Over Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
