@@ -1,51 +1,38 @@
 let questions = [
-
     {
-
-        question : "What does HTML stand for?",
-        imgSrc : "img/html.png",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
-        correct : "A"
-
+        question : "Commonly used data types include all EXCEPT:",
+        choiceA : ["booleans"],
+        choiceB : ["strings"],
+        choiceC : ["numbers"],
+        choiceD : ["alerts"],
+        answer : "D"
     },{
-
         question : "What does CSS stand for?",
-        imgSrc : "img/css.png",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
-        correct : "B"
-
+        choiceA : ["Cascading Style Sheets"],
+        choiceB : ["Colorful Style Settings"],
+        choiceC : ["Computer Sheet Styles"],
+        choiceD : ["Cascading Sheet Settings"],
+        answer : "A"
     },{
-
-        question : "What does JS stand for?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
-
+        question : "Which HTML element creates the largest heading?",
+        choiceA : ["<h2>"],
+        choiceB : ["<headingLarge>"],
+        choiceC : ["<h1>"],
+        choiceD : ["<h6>"],
+        answer : "C"
     },{
-
-        question : "What does JS stand for?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
-
+        question : "Which of the following functions converts a string to all lowercase letters?",
+        choiceA : ["toString()"],
+        choiceB : ["makeLowerCase()"],
+        choiceC : ["toLowerCase()"],
+        choiceD : ["convertString()"],
+        answer : "C"
     },{
-
-        question : "What does JS stand for?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
-
+        question : "Select the correct code for creating a JavScript function:",
+        choiceA : ["function randomFunction()"],
+        choiceB : ["randomFunction=function()"],
+        choiceC : ["randomFunction()"],
+        choiceD : ["function: create randomFunction()"],
+        answer : "A"
     }
-
-
 ];
