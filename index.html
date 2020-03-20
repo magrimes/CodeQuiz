@@ -17,12 +17,11 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="header">
-                <h3 class="timerHeading">Timer:</h3>
-                <h3 class="timer"></h3>
+                <h3 class="timer">Timer:</h3>
             </div>
         </div>
         <div class="col-sm-6">
-            <button onclick="viewHighScore" id="viewHS" class="btn btn-primary btn-lg">View Highscore</button>
+            <button onclick="viewHighScore()" id="viewHS" class="btn btn-primary btn-lg">View Highscore</button>
         </div>
     </div>
 
@@ -38,7 +37,7 @@
     </div>
 
     <div class="container">
-        <div id="quiz">
+        <div id="quizBox">
             <div id="question">
                 <div id="choices">
                     <div class="choice" id="A" onclick="checkAnswer('A')"></div>
@@ -51,7 +50,15 @@
         </div>
     </div>
 
-    <div class="container" id="scoreContainer" style="display: none">
+    <div class="container">
+        <div class="row justify-content center">
+            <div id="ansMessage">
+                <p id="listAns"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="completedContainer" style="display: none">
         <div id="completedMessage"></div>
         <div id="finalScoreMessage"></div>
         <div class="saveHS">
