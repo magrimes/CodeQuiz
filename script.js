@@ -30,7 +30,7 @@ var savedScores = "";
 startButton.addEventListener("click", function (event) {
     event.preventDefault();
     setTimer = (questions.length * 15);
-    timerCount();
+    countTimer();
     getQuestion();
     quizBox.style.display = "inline-flex";
     completedQuiz.style.display = "none";
@@ -204,11 +204,50 @@ function deleteList() {
 
     savedScores = [];
     scores = [];
-    
+
 }
 
+// Restart the quiz
+function startOver() {
+    setTimer = (questions.length * 15);
+    i = 0;
+    scores = [];
+    $("highScoreList").empty();
+    savedScores = JSON.parse(localStorage.getItem("scores"))
 
+    countTimer();
 
+    quizBox.style.display = "inline-flex";
+    initialPage.style.display = "inline";
+    completedQuiz.style.display = "none";
+    highScoreContainer.style.display = "none";
 
+    getQuestion();
 
+}
 
+// Setting the timer
+function countTimer() {
+    var timeInterval = setInterval( function() {
+        timerE1.textContent = "Timer : " + setTimer;
+
+        if (setTimer === 0) {
+            clearInterval(timeInterval);
+            getCompleted();
+        }
+
+        if (i === questions.length) {
+            clearInterval(timeInterval);
+            finalScore = setTimer;
+        }
+
+        if (setTimer <= 0) {
+            setTimer = 0;
+            clearInterval(timeInterval);
+            getCompleted();
+        }
+
+        setTimer--;
+
+    }, 1000)
+}
