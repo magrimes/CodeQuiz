@@ -14,14 +14,16 @@
 
 <body>
     <!-- Header -->
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="header">
-                <h3 class="timer">Timer:</h3>
+    <div class="initial" id="initialPage">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="header">
+                    <h3 class="timer">Timer:</h3>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <button onclick="viewHighScore()" id="viewHS" class="btn btn-primary btn-lg">View Highscore</button>
+            <div class="col-sm-6">
+                <button onclick="viewHighScore()" id="viewHS" class="btn btn-primary btn-lg">View Highscore</button>
+            </div>
         </div>
     </div>
 
@@ -76,7 +78,8 @@
             <ul id="highScoreList"></ul>
 
             <div class="lustify-content-center" id="highScoreButton">
-                <button onclick="startOver()" class="hsb" type="button" id="startOver" value="Start Over">Start Over Quiz</button>
+                <button onclick="startOver()" class="hsb" type="button" id="startOver" value="Start Over">Start Over
+                    Quiz</button>
             </div>
         </div>
     </div>

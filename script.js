@@ -1,5 +1,6 @@
 var startButton = document.getElementById("startQuiz");
 var quizRules = document.getElementById("quizRules");
+var initialPage = document.getElementById("initialPage");
 var quizBox = document.getElementById("quizBox");
 var quizQuestions = document.getElementById("question");
 var quizChoices = document.getElementById("choices");
@@ -32,12 +33,12 @@ startButton.addEventListener("click", function (event) {
     timerCount();
     getQuestion();
     quizBox.style.display = "inline-flex";
-    completedQuiz.style.dispaly = "none";
+    completedQuiz.style.display = "none";
 
     if (quizRules.style.display === "none") {
         quizRules.style.display = "block";
     } else {
-        quizRules.style.dispaly = "none";
+        quizRules.style.display = "none";
     }
 })
 
@@ -149,21 +150,49 @@ submitButton.addEventListener("click", function(event) {
 })
 
 // Function to save in local storage
+function saveScore() {
+    localStorage.setItem("scores", JSON.stringify(scores));
+}
 
+// Function to see saved high scores 
+function viewHighScore() {
+    completedQuiz.style.display = "none";
+    quizRules.style.display = "none";
+    initialPage.style.display = "none";
+    quizBox.style.display = "none";
+    answerBox.style.display = "none";
 
+    scores = JSON.parse(localStorage.getItem("scores"));
 
+    showHighScores();
 
+    return;
 
+}
+ 
+// Show the high scores
+function showHighScores() {
+    completedQuiz.style.display = "none";
+    highScoreContainer.style.display = "block";
 
+    highScoreHeader.textContent = "High Scores"
+    highScoreContainer.appendChild(highScoreHeader);
 
+    $(highScoreList).empty();
 
+    for (var n = 0; n < scores.length; n++) {
+        var score = scores[n];
+        var newScore = document.createElement("p");
+        newScore.textContent = score;
+        newScore.setAttribute("data-index", n);
+        highScoreList.appendChild(newScore);
+    }
+    highScoreHeader.appendChild(highScoreList);
+    highScoreList.appendChild(highScoreButton);
 
+}
 
-
-
-
-
-
+// Delete the high scores
 
 
 
