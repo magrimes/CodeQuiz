@@ -110,7 +110,6 @@ quizQuestions.addEventListener("click", function(event) {
 })
 
 // Final score is the remaining time
-
 function getCompleted() {
     quizBox.style.display = "none";
     answerBox.style.display = "none";
@@ -123,8 +122,33 @@ function getCompleted() {
     playerName.textContent = ("Enter your name: ");
 }
 
-// Name submission
+// Name submission function
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    var textName = enterName.value.trim();
+    if (textName === "") {
+        return;
+    }
 
+    var highScoreString = (textName + "  -  " + finalScore);
+    finalScore = "";
+    scores.push(highScoreString);
+    enterName.value = "";
+
+    savedScores = JSON.parse(localStorage.getItem("scores"));
+    if (savedScores) {
+        scores = savedScores.concat(scores);
+    };
+
+    saveScore();
+
+    highScoreContainer.style.display = "inline-flex";
+
+    postHighScores();
+
+})
+
+// Function to save in local storage
 
 
 
