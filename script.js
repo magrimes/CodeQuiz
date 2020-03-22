@@ -193,7 +193,19 @@ function showHighScores() {
 }
 
 // Delete the high scores
+function deleteList() {
+    localStorage.removeItem("scores");
 
+    highScoreHeader.textContent = "High Scores";
+    highScoreContainer.appendChild(highScoreHeader);
+    highScoreHeader.appendChild(highScoreButton);
+
+    $("#highScoreList").empty();
+
+    savedScores = [];
+    scores = [];
+    
+}
 
 
 
