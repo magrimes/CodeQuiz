@@ -9,7 +9,7 @@ var completed = document.getElementById("completedMessage");
 var finalScoreMessage = document.getElementById("finalScoreMessage");
 var playerName = document.getElementById("playerName");
 
-var playerName = document.querySelector("#nameField");
+var nameField = document.querySelector("#nameField");
 var submitButton = document.querySelector("#submitButton");
 var highScoreContainer = document.querySelector("#highScoreContainer");
 var highScoreHeader = document.querySelector("#highScoreHeader");
@@ -47,7 +47,7 @@ function getQuestion() {
     answerBox.style.display = "none";
 
     if (i === questions.length) {
-        getDone();
+        getCompleted();
         return;
     }
 
@@ -101,7 +101,7 @@ quizQuestions.addEventListener("click", function(event) {
 
         if (setTimer <= 0) {
             setTimer = 0;
-            getDone();
+            getCompleted();
         }
         i++
         setTimeout(getQuestion, 1000);
@@ -109,9 +109,21 @@ quizQuestions.addEventListener("click", function(event) {
     event.stopPropagation();
 })
 
+// Final score is the remaining time
 
+function getCompleted() {
+    quizBox.style.display = "none";
+    answerBox.style.display = "none";
+    completedQuiz.style.display = "inline";
 
+    var nameField = innerHTML = "";
 
+    completed.textContent = ("You have completed the quiz!");
+    finalScoreMessage.textContent = ("Your final score is " + finalScore);
+    playerName.textContent = ("Enter your name: ");
+}
+
+// Name submission
 
 
 
