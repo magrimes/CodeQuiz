@@ -1,38 +1,23 @@
 let questions = [
     {
-        question : "Commonly used data types include all EXCEPT:",
-        choiceA : ["booleans"],
-        choiceB : ["strings"],
-        choiceC : ["numbers"],
-        choiceD : ["alerts"],
-        answer : "D"
+        title : "Commonly used data types include all EXCEPT:",
+        choices : ["booleans", "strings", "numbers", "alerts"],
+        answer : "alerts"
     },{
-        question : "What does CSS stand for?",
-        choiceA : ["Cascading Style Sheets"],
-        choiceB : ["Colorful Style Settings"],
-        choiceC : ["Computer Sheet Styles"],
-        choiceD : ["Cascading Sheet Settings"],
-        answer : "A"
+        title : "What does CSS stand for?",
+        choices : ["Cascading Style Sheets", "Colorful Style Settings", "Computer Sheet Styles", "Cascading Sheet Settings"],
+        answer : "Cascading Style Sheets"
     },{
-        question : "Which HTML element creates the largest heading?",
-        choiceA : ["<h2>"],
-        choiceB : ["<headingLarge>"],
-        choiceC : ["<h1>"],
-        choiceD : ["<h6>"],
-        answer : "C"
+        title : "Which HTML element creates the largest heading?",
+        choices : ["<h2>", "<headingLarge>", "<h1>", "<h6>"],
+        answer : "<h1>"
     },{
-        question : "Which of the following functions converts a string to all lowercase letters?",
-        choiceA : ["toString()"],
-        choiceB : ["makeLowerCase()"],
-        choiceC : ["toLowerCase()"],
-        choiceD : ["convertString()"],
-        answer : "C"
+        title : "Which of the following functions converts a string to all lowercase letters?",
+        choices : ["toString()", "makeLowerCase()", "toLowerCase()", "convertString()"],
+        answer : "toLowerCase()"
     },{
-        question : "Select the correct code for creating a JavScript function:",
-        choiceA : ["function randomFunction()"],
-        choiceB : ["randomFunction=function()"],
-        choiceC : ["randomFunction()"],
-        choiceD : ["function: create randomFunction()"],
-        answer : "A"
+        title : "Select the correct code for creating a JavScript function:",
+        choices : ["function randomFunction()", "randomFunction=function()", "randomFunction()", "function: create randomFunction()"],
+        answer : "function randomFunction()"
     }
 ];
