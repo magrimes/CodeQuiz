@@ -25,6 +25,62 @@ var finalScore = 0;
 var i = 0;
 var savedScores = "";
 
+// Start Quiz
+startButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    setTimer = (questions.length * 15);
+    timerCount();
+    getQuestion();
+    quizBox.style.display = "inline-flex";
+    completedQuiz.style.dispaly = "none";
+
+    if (quizRules.style.display === "none") {
+        quizRules.style.display = "block";
+    } else {
+        quizRules.style.dispaly = "none";
+    }
+})
+
+// Get Questions
+function getQuestion() {
+
+    answerBox.style.display = "none";
+
+    if (i === questions.length) {
+        getDone();
+        return;
+    }
+
+    quizQuestions.innerHTML = "";
+    var getQuestions = questions[i].title;
+    var p = document.createElement("p");
+    p.textContent = getQuestions;
+    p.setAttribute("question", i);
+    quizQuestions.appendChild(p);
+    getChoices();
+
+}
+
+// Get Choices
+function getChoices() {
+
+    for (var j = 0; j < 4; j++) {
+        var listAnswers = questions[i].choices[j];
+        var p = document.createElement("p");
+        p.textContent = listAnswers;
+        p.setAttribute("answerChoice", j)
+
+        var button = document.createElement("button");
+        button.textContent = listAnswers;
+        button.setAttribute("answerChoice", j);
+        quizQuestions.appendChild(button)
+    
+    }
+    
+}
+
+
+
 
 
 
