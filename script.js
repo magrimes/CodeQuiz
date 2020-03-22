@@ -76,10 +76,38 @@ function getChoices() {
         quizQuestions.appendChild(button)
     
     }
-    
+
 }
 
+// Selecting an answer and adjusting timer
+quizQuestions.addEventListener("click", function(event) {
+    var element = event.target;
 
+    if (element.matches("button") === true) {
+        var index = element.getAttribute("answerChoice");
+        answerBox.style.display = "inline-flex";
+    }
+
+    if (questions[i].choices[index] === questions[i].answer) {
+        answer.appendChild(message);
+        i++
+        setTimeout(getQuestion, 1000);
+    } else {
+        answer.innerHTML = "";
+        var messageWrong = document.createTextNode("Wrong");
+        answer.appendChild(messageWrong);
+
+        setTimer -= 10;
+
+        if (setTimer <= 0) {
+            setTimer = 0;
+            getDone();
+        }
+        i++
+        setTimeout(getQuestion, 1000);
+    }
+    event.stopPropagation();
+})
 
 
 
