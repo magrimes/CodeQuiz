@@ -16,12 +16,12 @@
     <!-- Header -->
     <div class="initial" id="initialPage">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="header">
                     <h3 class="timer">Timer:</h3>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <button onclick="viewHighScore()" id="viewHS" class="btn btn-primary btn-lg">View Highscore</button>
             </div>
         </div>
@@ -30,15 +30,18 @@
     <!-- Quiz Content -->
 
     <div class="jumbotron" id="quizRules">
-        <h1 class="title">Code Quiz</h1>
-        <p class="quizInfo">Welcome to Code Quiz! Be prepared to test your knowledge on various topics like HTML, CSS,
-            and JavaScript. Answer as many questions correctly in the time given. If you answer wrong, you will lose
-            time on the clock! Final score will be shown at the end of the quiz. Good luck!</p>
-        <hr>
-        <button id="startQuiz" class="btn btn-primary btn-lg">Start Quiz</button>
+        <div class="initialContainer">
+            <h1 class="title">Code Quiz</h1>
+            <p class="quizInfo">Welcome to Code Quiz! Be prepared to test your knowledge on various topics like HTML,
+                CSS,
+                and JavaScript. Answer as many questions correctly in the time given. If you answer wrong, you will lose
+                time on the clock! Final score will be shown at the end of the quiz. Good luck!</p>
+            <hr>
+            <button id="startQuiz" class="btn btn-primary btn-lg">Start Quiz</button>
+        </div>
     </div>
 
-    <div class="container">
+    <div class="container" class="questionSpace">
         <div id="quizBox">
             <div id="question">
                 <div id="choices">
@@ -61,12 +64,14 @@
     </div>
 
     <div class="container" id="completedContainer" style="display: none">
-        <div id="completedMessage"></div>
-        <div id="finalScoreMessage"></div>
-        <div class="saveHS">
-            <label id="playerName"></label>
-            <input type="text" id="nameField" placeholder="Enter Name Here ">
-            <input type="button" id="submitButton" value="Submit High Score">
+        <div class="saveBox">
+            <div id="completedMessage"></div>
+            <div id="finalScoreMessage"></div>
+            <div class="saveHS">
+                <label id="playerName"></label>
+                <input type="text" id="nameField" placeholder="Enter Name Here ">
+                <input type="button" id="submitButton" value="Submit High Score">
+            </div>
         </div>
     </div>
 

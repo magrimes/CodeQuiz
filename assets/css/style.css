@@ -1,16 +1,80 @@
 .timer {
-    margin-top: 50px;
+    margin-top: 20px;
+    color: rgb(74, 74, 182);
+    padding-left: 180px;
+}
+
+body {
+    background-color: rgb(113, 179, 168);
 }
 
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: blue;
+    color: rgb(74, 74, 182);
+    font-size: 65px;
 }
 
-h3 {
-    color: red;
+.quizInfo {
+    font-size: 20px;
 }
 
-.jumbotron {
-    background-color: ;
+.questionSpace {
+    margin: 50px;
+}
+
+#listAns {
+    font-size: 30px;
+
+}
+
+#highScoreContainer {
+    background-color: white;
+    width: fit-content;
+    margin: 100px;
+    padding: 40px;
+}
+
+#highScoreHeader {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+.saveBox {
+    background-color: white;
+    margin-left: 180px;
+    margin-right: 15px;
+    padding: 15px;
+    width: fit-content;
+}
+
+p {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+button {
+    margin-bottom: 20px;
+}
+
+#quizBox {
+    background-color: white;
+    margin: 100px;
+}
+
+#viewHS {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(74, 74, 182);
+    margin-right: ;
+}
+
+#startQuiz {
+    background-color: rgb(74, 74, 182);
+}
+
+.initialContainer {
+    margin: 0 auto;
+    padding-left: 150px;
+    padding-right: 150px;
 }
