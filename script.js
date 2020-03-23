@@ -88,8 +88,10 @@ quizQuestions.addEventListener("click", function(event) {
         var index = element.getAttribute("answerChoice");
         answerBox.style.display = "inline-flex";
     }
-
+        
     if (questions[i].choices[index] === questions[i].answer) {
+        answer.innerHTML = "";
+        var message = document.createTextNode("Correct!");
         answer.appendChild(message);
         i++
         setTimeout(getQuestion, 1000);
@@ -126,7 +128,7 @@ function getCompleted() {
 // Name submission function
 submitButton.addEventListener("click", function(event) {
     event.preventDefault();
-    var textName = enterName.value.trim();
+    var textName = nameField.value.trim();
     if (textName === "") {
         return;
     }
@@ -134,7 +136,7 @@ submitButton.addEventListener("click", function(event) {
     var highScoreString = (textName + "  -  " + finalScore);
     finalScore = "";
     scores.push(highScoreString);
-    enterName.value = "";
+    nameField.value = "";
 
     savedScores = JSON.parse(localStorage.getItem("scores"));
     if (savedScores) {
@@ -145,7 +147,7 @@ submitButton.addEventListener("click", function(event) {
 
     highScoreContainer.style.display = "inline-flex";
 
-    postHighScores();
+    viewHighScore();
 
 })
 
@@ -178,7 +180,7 @@ function showHighScores() {
     highScoreHeader.textContent = "High Scores"
     highScoreContainer.appendChild(highScoreHeader);
 
-    $(highScoreList).empty();
+    highScoreList.innerHTML = "";
 
     for (var n = 0; n < scores.length; n++) {
         var score = scores[n];
@@ -200,7 +202,7 @@ function deleteList() {
     highScoreContainer.appendChild(highScoreHeader);
     highScoreHeader.appendChild(highScoreButton);
 
-    $("#highScoreList").empty();
+    highScoreList.innerHTML = "";
 
     savedScores = [];
     scores = [];
@@ -212,7 +214,7 @@ function startOver() {
     setTimer = (questions.length * 15);
     i = 0;
     scores = [];
-    $("highScoreList").empty();
+    highScoreList.innerHTML = "";
     savedScores = JSON.parse(localStorage.getItem("scores"))
 
     countTimer();
